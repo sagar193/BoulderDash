@@ -12,5 +12,7 @@ namespace BoulderDash
         public TileEntity Left { get; set; }
         public TileEntity Right { get; set; }
 
+        //abstract internal void moveTo(TileEntity newPos);
+
     }
 }

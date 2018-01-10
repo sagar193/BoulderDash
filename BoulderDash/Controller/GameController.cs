@@ -27,11 +27,32 @@ namespace BoulderDash
             OutputCMD.printEntireField();
             InputCMD.waitForInput();
 
-            //bool running = true;
-            //while (running)
-            //{
-            //    Console.WriteLine(input.waitForInput().Key);
-            //}
+            bool running = true;
+            while (running)
+            {
+                if (Console.KeyAvailable)
+                {
+                    InputCMD.waitForInput();
+                    ConsoleKeyInfo key = InputCMD.input.Dequeue();
+                    if (key != null)
+                    {
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.F1:
+                                Console.WriteLine("You pressed F1!");
+                                break;
+                            case ConsoleKey.UpArrow:
+                                //Game.Rockford.
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                OutputCMD.printEntireField();
+                System.Threading.Thread.Sleep(200);
+                //Console.WriteLine(input.waitForInput().Key);
+            }
         }
 
         private void loadMap()

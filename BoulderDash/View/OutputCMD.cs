@@ -128,7 +128,7 @@ namespace BoulderDash
             }
         }
 
-        public void printSteelWall(TileEntity tileEntity)
+        private void printSteelWall(TileEntity tileEntity)
         {
             bool upIsSteelWall = false;
             bool downIsSteelWall = false;
@@ -180,6 +180,11 @@ namespace BoulderDash
                 Console.Write("╗");
             else
                 throw new Exception();
+        }
+
+        public void printSpecific(string x)
+        {
+            Console.WriteLine(x);
         }
         
     }

@@ -7,10 +7,19 @@ namespace BoulderDash
 {
     public class InputCMD
     {
+        public Queue<System.ConsoleKeyInfo> input;
 
-        public System.ConsoleKeyInfo waitForInput()
+        public InputCMD()
         {
-            return Console.ReadKey();
-        } 
+            input = new Queue<ConsoleKeyInfo>();
+        }
+
+        public void waitForInput()
+        {
+            if (Console.KeyAvailable)
+            {
+                input.Enqueue(Console.ReadKey(true));
+            }
+        }
     }
 }
