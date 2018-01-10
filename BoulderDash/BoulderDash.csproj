@@ -44,14 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\MapLoaderController.cs" />
-    <Compile Include="Model\EmptyTile.cs" />
+    <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Exit.cs" />
     <Compile Include="Model\Boulder.cs" />
     <Compile Include="Model\Diamond.cs" />
     <Compile Include="Model\FireFly.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Controller\GameController.cs" />
-    <Compile Include="TileEntityTypesEnum.cs" />
+    <Compile Include="EntityTypesEnum.cs" />
     <Compile Include="View\InputCMD.cs" />
     <Compile Include="Model\Mud.cs" />
     <Compile Include="View\OutputCMD.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Rockford.cs" />
     <Compile Include="Model\SteelWall.cs" />
-    <Compile Include="Model\TileEntity.cs" />
+    <Compile Include="Model\Tile.cs" />
     <Compile Include="Model\Wall.cs" />
   </ItemGroup>
   <ItemGroup>

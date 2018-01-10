@@ -7,7 +7,7 @@ namespace BoulderDash
 {
     public class Game
     {
-        public TileEntity TileEntity { get; set; }
+        public Tile TileEntity { get; set; }
 
         public Rockford Rockford;
 

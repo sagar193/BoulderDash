@@ -7,7 +7,7 @@ namespace BoulderDash
 {
     public class OutputCMD
     {
-        public TileEntity FirstField { get; set; }
+        public Tile FirstField { get; set; }
 
         public OutputCMD()
         {
@@ -39,8 +39,8 @@ namespace BoulderDash
         {
             Console.Clear();
 
-            TileEntity lastPrintedField;
-            TileEntity firstOfLastLineField;
+            Tile lastPrintedField;
+            Tile firstOfLastLineField;
             bool newLine = false;
             bool lastLine = false;
 
@@ -71,88 +71,87 @@ namespace BoulderDash
             
         }
 
-        private void findTypeAndPrint(TileEntity tileEntity)
+        private void findTypeAndPrint(Tile tile)
         {
-            TileEntityTypesEnum printingType;
-
-            if (tileEntity.GetType() == typeof(SteelWall))
-                printingType = TileEntityTypesEnum.SteelWall;
-            else if (tileEntity.GetType() == typeof(Boulder))
-                printingType = TileEntityTypesEnum.Boulder;
-            else if (tileEntity.GetType() == typeof(Diamond))
-                printingType = TileEntityTypesEnum.Diamond;
-            else if (tileEntity.GetType() == typeof(EmptyTile))
-                printingType = TileEntityTypesEnum.EmptyTile;
-            else if (tileEntity.GetType() == typeof(Exit))
-                printingType = TileEntityTypesEnum.Exit;
-            else if (tileEntity.GetType() == typeof(FireFly))
-                printingType = TileEntityTypesEnum.Firefly;
-            else if (tileEntity.GetType() == typeof(Mud))
-                printingType = TileEntityTypesEnum.Mud;
-            else if (tileEntity.GetType() == typeof(Rockford))
-                printingType = TileEntityTypesEnum.Rockford;
-            else if (tileEntity.GetType() == typeof(Wall))
-                printingType = TileEntityTypesEnum.Wall;
+            EntityTypesEnum printingType;
+            if (tile.entity == null)
+                printingType = EntityTypesEnum.Tile;
+            else if (tile.entity.GetType() == typeof(SteelWall))
+                printingType = EntityTypesEnum.SteelWall;
+            else if (tile.entity.GetType() == typeof(Boulder))
+                printingType = EntityTypesEnum.Boulder;
+            else if (tile.entity.GetType() == typeof(Diamond))
+                printingType = EntityTypesEnum.Diamond;
+            else if (tile.entity.GetType() == typeof(Exit))
+                printingType = EntityTypesEnum.Exit;
+            else if (tile.entity.GetType() == typeof(FireFly))
+                printingType = EntityTypesEnum.Firefly;
+            else if (tile.entity.GetType() == typeof(Mud))
+                printingType = EntityTypesEnum.Mud;
+            else if (tile.entity.GetType() == typeof(Rockford))
+                printingType = EntityTypesEnum.Rockford;
+            else if (tile.entity.GetType() == typeof(Wall))
+                printingType = EntityTypesEnum.Wall;
             else
                 throw new Exception();
 
             switch (printingType)
             {
-                case TileEntityTypesEnum.EmptyTile:
+                case EntityTypesEnum.Tile:
                     Console.Write(" ");
                     break;
-                case TileEntityTypesEnum.SteelWall:
-                    printSteelWall(tileEntity);
+                case EntityTypesEnum.SteelWall:
+                    printSteelWall(tile);
                     break;
-                case TileEntityTypesEnum.Exit:
+                case EntityTypesEnum.Exit:
                     Console.Write("E");
                     break;
-                case TileEntityTypesEnum.Wall:
+                case EntityTypesEnum.Wall:
                     Console.Write("=");
                     break;
-                case TileEntityTypesEnum.Mud:
+                case EntityTypesEnum.Mud:
                     Console.Write("▒");
                     break;
-                case TileEntityTypesEnum.Boulder:
+                case EntityTypesEnum.Boulder:
                     Console.Write("B");
                     break;
-                case TileEntityTypesEnum.Diamond:
+                case EntityTypesEnum.Diamond:
                     Console.Write("¤");
                     break;
-                case TileEntityTypesEnum.Rockford:
+                case EntityTypesEnum.Rockford:
                     Console.Write("©");
                     break;
-                case TileEntityTypesEnum.Firefly:
+                case EntityTypesEnum.Firefly:
                     Console.Write("F");
                     break;
             }
         }
 
-        private void printSteelWall(TileEntity tileEntity)
+        private void printSteelWall(Tile tile)
         {
             bool upIsSteelWall = false;
             bool downIsSteelWall = false;
             bool rightIsSteelWall = false;
             bool leftIsSteelWall = false;
 
-            if(tileEntity.Up != null)
+            if(tile.Up != null && tile.Up.entity != null)
             {
-                if (tileEntity.Up.GetType() == typeof(SteelWall))
+                if (tile.Up.entity.GetType() == typeof(SteelWall))
                     upIsSteelWall = true;
             }
-            if (tileEntity.Down != null)
+            if (tile.Down != null && tile.Down.entity != null)
             {
-                if (tileEntity.Down.GetType() == typeof(SteelWall))
+                if (tile.Down.entity.GetType() == typeof(SteelWall))
                     downIsSteelWall = true;
             }
-            if (tileEntity.Right != null)
+            if (tile.Right != null && tile.Right.entity != null)
             {
-                if (tileEntity.Right.GetType() == typeof(SteelWall))
+                if (tile.Right.entity.GetType() == typeof(SteelWall))
                     rightIsSteelWall = true;
             }
-            if (tileEntity.Left != null)
+            if (tile.Left != null && tile.Left.entity != null)
             {
-                if (tileEntity.Left.GetType() == typeof(SteelWall))
+                if (tile.Left.entity.GetType() == typeof(SteelWall))
                     leftIsSteelWall = true;
             }
 

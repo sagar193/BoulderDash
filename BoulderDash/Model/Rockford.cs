@@ -5,8 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Rockford : TileEntity
+    public class Rockford : Entity
     {
-        
     }
 }

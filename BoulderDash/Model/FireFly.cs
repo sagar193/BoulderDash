@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class FireFly : TileEntity
+    public class FireFly : Entity
     {
     }
 }

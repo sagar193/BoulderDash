@@ -8,15 +8,15 @@ namespace BoulderDash.Controller
 {
     public class MapLoaderController
     {
-        public TileEntityTypesEnum TileEntityTypesEnum;
-        private TileEntity firstTileEntity;
-        private TileEntity lastCreatedTileEntity;
-        private TileEntity firstOfLastRowTileEntity;
+        public EntityTypesEnum TileEntityTypesEnum;
+        private Tile firstTile;
+        private Tile lastCreatedTile;
+        private Tile firstOfLastRowTile;
         private bool newLine;
         private int columnIterator;
         private int rowIterator;
 
-        public TileEntity createLevel(string levelPath)
+        public Tile createLevel(string levelPath)
         {
             newLine = false;
             foreach(var line in System.IO.File.ReadAllLines("levels\\"+levelPath))
@@ -26,31 +26,31 @@ namespace BoulderDash.Controller
                     switch (c)
                     {
                         case 'S':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.SteelWall));
+                            connectTile(tileEntityFactory(EntityTypesEnum.SteelWall));
                             break;
                         case 'B':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Boulder));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Boulder));
                             break;
                         case 'D':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Diamond));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Diamond));
                             break;
                         case 'F':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Firefly));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Firefly));
                             break;
                         case 'M':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Mud));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Mud));
                             break;
                         case 'R':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Rockford));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Rockford));
                             break;
                         case 'W':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Wall));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Wall));
                             break;
                         case ' ':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.EmptyTile));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Tile));
                             break;
                         case 'E':
-                            connectTileEntity(tileEntityFactory(TileEntityTypesEnum.Exit));
+                            connectTile(tileEntityFactory(EntityTypesEnum.Exit));
                             break;
                         default:
                             break;
@@ -58,40 +58,40 @@ namespace BoulderDash.Controller
                 }
                 newLine = true;
             }
-            return firstTileEntity;
+            return firstTile;
         }
 
-        private TileEntity tileEntityFactory(TileEntityTypesEnum type)
+        private Tile tileEntityFactory(EntityTypesEnum type)
         {
-            TileEntity newTileEntity = null;
+            Tile newTileEntity = null;
             switch (type)
             {
-                case TileEntityTypesEnum.EmptyTile:
-                    newTileEntity = new EmptyTile();
+                case EntityTypesEnum.Tile:
+                    newTileEntity = new Tile();
                     break;
-                case TileEntityTypesEnum.SteelWall:
-                    newTileEntity = new SteelWall();
+                case EntityTypesEnum.SteelWall:
+                    newTileEntity = new Tile(new SteelWall());
                     break;
-                case TileEntityTypesEnum.Exit:
-                    newTileEntity = new Exit();
+                case EntityTypesEnum.Exit:
+                    newTileEntity = new Tile(new Exit());
                     break;
-                case TileEntityTypesEnum.Wall:
-                    newTileEntity = new Wall();
+                case EntityTypesEnum.Wall:
+                    newTileEntity = new Tile(new Wall());
                     break;
-                case TileEntityTypesEnum.Mud:
-                    newTileEntity = new Mud();
+                case EntityTypesEnum.Mud:
+                    newTileEntity = new Tile(new Mud());
                     break;
-                case TileEntityTypesEnum.Boulder:
-                    newTileEntity = new Boulder();
+                case EntityTypesEnum.Boulder:
+                    newTileEntity = new Tile(new Boulder());
                     break;
-                case TileEntityTypesEnum.Diamond:
-                    newTileEntity = new Diamond();
+                case EntityTypesEnum.Diamond:
+                    newTileEntity = new Tile(new Diamond());
                     break;
-                case TileEntityTypesEnum.Rockford:
-                    newTileEntity = new Rockford();
+                case EntityTypesEnum.Rockford:
+                    newTileEntity = new Tile(new Rockford());
                     break;
-                case TileEntityTypesEnum.Firefly:
-                    newTileEntity = new FireFly();
+                case EntityTypesEnum.Firefly:
+                    newTileEntity = new Tile(new FireFly());
                     break;
             }
 
@@ -104,14 +104,14 @@ namespace BoulderDash.Controller
             }
         }
 
-        private void connectTileEntity(TileEntity newTileEntity)
+        private void connectTile(Tile newTile)
         {
             ///<summary>Code gets in here with the first TileEntity</summary>
-            if (firstTileEntity == null)
+            if (firstTile == null)
             {
-                firstTileEntity = newTileEntity;
-                lastCreatedTileEntity = newTileEntity;
-                firstOfLastRowTileEntity = newTileEntity;
+                firstTile = newTile;
+                lastCreatedTile = newTile;
+                firstOfLastRowTile = newTile;
 
                 columnIterator = 0;
             }
@@ -119,21 +119,21 @@ namespace BoulderDash.Controller
             {
                 if (newLine == false)
                 {
-                    lastCreatedTileEntity.Right = newTileEntity;
-                    newTileEntity.Left = lastCreatedTileEntity;
-                    lastCreatedTileEntity = newTileEntity;
+                    lastCreatedTile.Right = newTile;
+                    newTile.Left = lastCreatedTile;
+                    lastCreatedTile = newTile;
 
                     columnIterator++;
-                    connectUp(newTileEntity);
+                    connectUp(newTile);
                 } else if (newLine == true)
                 {
-                    lastCreatedTileEntity = newTileEntity;
-                    firstOfLastRowTileEntity = newTileEntity;
+                    lastCreatedTile = newTile;
+                    firstOfLastRowTile = newTile;
                     newLine = false;
 
                     columnIterator = 0;
                     rowIterator++;
-                    connectUp(newTileEntity);
+                    connectUp(newTile);
                 } else
                 {
                     throw new Exception();
@@ -141,21 +141,21 @@ namespace BoulderDash.Controller
             }
         }
 
-        private void connectUp(TileEntity tileEntity)
+        private void connectUp(Tile tile)
         {
             if (rowIterator == 0)
                 return;
-            TileEntity upperTileEntity = firstTileEntity;
+            Tile upperTile = firstTile;
             for (int i = 0; i < rowIterator -1; i++)
             {
-                upperTileEntity = upperTileEntity.Down;
+                upperTile = upperTile.Down;
             }
             for (int j = 0; j < columnIterator; j++)
             {
-                upperTileEntity = upperTileEntity.Right;
+                upperTile = upperTile.Right;
             }
-            upperTileEntity.Down = tileEntity;
-            tileEntity.Up = upperTileEntity;
+            upperTile.Down = tile;
+            tile.Up = upperTile;
         }
     }
 }

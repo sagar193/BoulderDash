@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public enum TileEntityTypesEnum
+    public enum EntityTypesEnum
     {
-        EmptyTile,
+        Tile,
         SteelWall,
         Exit,
         Wall,
