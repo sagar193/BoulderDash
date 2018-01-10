@@ -43,11 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\MapLoaderController.cs" />
+    <Compile Include="Model\EmptyTile.cs" />
+    <Compile Include="Model\Exit.cs" />
+    <Compile Include="Model\Boulder.cs" />
+    <Compile Include="Model\Diamond.cs" />
+    <Compile Include="Model\FireFly.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Controller\GameController.cs" />
+    <Compile Include="TileEntityTypesEnum.cs" />
+    <Compile Include="View\InputCMD.cs" />
+    <Compile Include="Model\Mud.cs" />
+    <Compile Include="View\OutputCMD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Rockford.cs" />
+    <Compile Include="Model\SteelWall.cs" />
+    <Compile Include="Model\TileEntity.cs" />
+    <Compile Include="Model\Wall.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Levels\BD_level1.txt" />
+    <Content Include="Levels\BD_level2.txt" />
+    <Content Include="Levels\BD_level3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

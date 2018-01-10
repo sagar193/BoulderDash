@@ -10,6 +10,10 @@ namespace BoulderDash
     {
         static void Main(string[] args)
         {
+            InputCMD inputView = new InputCMD();
+            OutputCMD outputView = new OutputCMD();
+
+            GameController MainGame = new GameController(inputView, outputView);
         }
     }
 }
