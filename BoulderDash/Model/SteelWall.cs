@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class SteelWall : Entity
+    public class SteelWall : StationaryEntity
     {
         public SteelWall(out Tile newTile) : base(out newTile)
         {

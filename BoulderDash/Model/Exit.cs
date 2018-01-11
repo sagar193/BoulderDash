@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Exit : Entity
+    public class Exit : StationaryEntity
     {
         public Exit(out Tile newTile) : base(out newTile)
         {

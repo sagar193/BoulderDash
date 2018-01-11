@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Rockford : Entity
+    public class Rockford : MovableEntity
     {
         public Rockford(out Tile newTile) : base(out newTile)
         {

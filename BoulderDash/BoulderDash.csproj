@@ -54,6 +54,8 @@
     <Compile Include="Model\Game.cs" />
     <Compile Include="Controller\GameController.cs" />
     <Compile Include="Enums\EntityTypesEnum.cs" />
+    <Compile Include="MovableEntity.cs" />
+    <Compile Include="StationaryEntity.cs" />
     <Compile Include="View\InputCMD.cs" />
     <Compile Include="Model\Mud.cs" />
     <Compile Include="View\OutputCMD.cs" />

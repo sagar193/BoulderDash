@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Diamond : Entity
+    public class Diamond : MovableEntity
     {
         public Diamond(out Tile newTile) : base(out newTile)
         {

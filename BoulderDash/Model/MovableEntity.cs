@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Boulder : MovableEntity
+    public abstract class MovableEntity : Entity
     {
-        public Boulder(out Tile newTile) : base(out newTile)
+        public MovableEntity(out Tile newTile) : base(out newTile)
         {
         }
     }
