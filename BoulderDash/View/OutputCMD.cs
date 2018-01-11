@@ -175,8 +175,10 @@ namespace BoulderDash
                 Console.Write("╝");
             else if (leftIsSteelWall && downIsSteelWall)
                 Console.Write("╗");
+            else if (downIsSteelWall)
+                Console.Write("╥");
             else
-                throw new Exception();
+                throw new Exception("unprogrammed steel wall");
         }
 
         public void printSpecific(string x)

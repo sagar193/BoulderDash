@@ -7,5 +7,8 @@ namespace BoulderDash
 {
     public class Diamond : Entity
     {
+        public Diamond(out Tile newTile) : base(out newTile)
+        {
+        }
     }
 }

@@ -7,5 +7,8 @@ namespace BoulderDash
 {
     public class FireFly : Entity
     {
+        public FireFly(out Tile newTile) : base(out newTile)
+        {
+        }
     }
 }

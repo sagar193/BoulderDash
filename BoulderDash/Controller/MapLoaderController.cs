@@ -80,30 +80,29 @@ namespace BoulderDash.Controller
                     newTileEntity = new Tile();
                     break;
                 case EntityTypesEnum.SteelWall:
-                    newTileEntity = new Tile(new SteelWall());
+                    new SteelWall(out newTileEntity);
                     break;
                 case EntityTypesEnum.Exit:
-                    newTileEntity = new Tile(new Exit());
+                    new Exit(out newTileEntity);
                     break;
                 case EntityTypesEnum.Wall:
-                    newTileEntity = new Tile(new Wall());
+                    new Wall(out newTileEntity);
                     break;
                 case EntityTypesEnum.Mud:
-                    newTileEntity = new Tile(new Mud());
+                    new Mud(out newTileEntity);
                     break;
                 case EntityTypesEnum.Boulder:
-                    newTileEntity = new Tile(new Boulder());
+                    new Boulder(out newTileEntity);
                     break;
                 case EntityTypesEnum.Diamond:
-                    newTileEntity = new Tile(new Diamond());
+                    new Diamond(out newTileEntity);
                     break;
                 case EntityTypesEnum.Rockford:
-                    Rockford rf = new Rockford();
-                    newTileEntity = new Tile(rf);
+                    Rockford rf = new Rockford(out newTileEntity);
                     rockfordPos = rf;
                     break;
                 case EntityTypesEnum.Firefly:
-                    newTileEntity = new Tile(new FireFly());
+                    new FireFly(out newTileEntity);
                     break;
             }
 

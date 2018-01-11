@@ -44,8 +44,11 @@ namespace BoulderDash
                             case ConsoleKey.F1:
                                 Console.WriteLine("You pressed F1!");
                                 break;
-                            case ConsoleKey.UpArrow:
+                            case ConsoleKey.Add:
                                 game.nextLevel();
+                                break;
+                            case ConsoleKey.Subtract:
+                                game.previousLevel();
                                 break;
                             default:
                                 break;

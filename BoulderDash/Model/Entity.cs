@@ -9,6 +9,12 @@ namespace BoulderDash
     {
         internal Tile tile;
 
+        public Entity(out Tile newTile)
+        {
+            tile = new Tile(this);
+            newTile = tile;
+        }
+
         //internal abstract Tile moveTo(Tile newTile);
     }
 }

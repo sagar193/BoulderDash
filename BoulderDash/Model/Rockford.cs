@@ -7,5 +7,8 @@ namespace BoulderDash
 {
     public class Rockford : Entity
     {
+        public Rockford(out Tile newTile) : base(out newTile)
+        {
+        }
     }
 }

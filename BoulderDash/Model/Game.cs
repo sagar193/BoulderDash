@@ -24,6 +24,7 @@ namespace BoulderDash
                 if (levels[i] == null)
                 {
                     levels[i] = newLevel;
+                    return;
                 }
             }
         }
@@ -37,16 +38,35 @@ namespace BoulderDash
         public void nextLevel()
         {
             curLevel++;
-            if (curLevel > levels.Length)
+            if (curLevel >= levels.Length)
             {
-                throw new Exception("No next level available");
+                curLevel = 0;
             }
 
-            Rockford oldRockford = levels[curLevel].rockfordPos;
+            switchLevels(levels[curLevel]);
+        }
+
+        public void previousLevel()
+        {
+            curLevel--;
+            if (curLevel < 0)
+            {
+                curLevel = levels.Length - 1;
+            }
+
+            switchLevels(levels[curLevel]);
+        }
+
+        public void switchLevels(Level newLevel)
+        {
+            Rockford oldRockford = newLevel.rockfordPos;
+            Tile oldTile = Rockford.tile;
+
             oldRockford.tile.entity = Rockford;
             Rockford.tile = oldRockford.tile;
 
-            oldRockford.tile = null; //bye rockford :(
+            oldRockford.tile = oldTile;
+            oldTile.entity = oldRockford;
         }
 
         public Tile getCurrentStartTile()
