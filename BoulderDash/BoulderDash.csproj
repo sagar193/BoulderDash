@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\MapLoaderController.cs" />
+    <Compile Include="Enums\DirectionEnum.cs" />
+    <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Exit.cs" />
     <Compile Include="Model\Boulder.cs" />
@@ -51,7 +53,7 @@
     <Compile Include="Model\FireFly.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Controller\GameController.cs" />
-    <Compile Include="EntityTypesEnum.cs" />
+    <Compile Include="Enums\EntityTypesEnum.cs" />
     <Compile Include="View\InputCMD.cs" />
     <Compile Include="Model\Mud.cs" />
     <Compile Include="View\OutputCMD.cs" />

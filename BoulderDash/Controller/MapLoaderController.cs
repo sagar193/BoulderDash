@@ -8,17 +8,24 @@ namespace BoulderDash.Controller
 {
     public class MapLoaderController
     {
-        public EntityTypesEnum TileEntityTypesEnum;
         private Tile firstTile;
         private Tile lastCreatedTile;
         private Tile firstOfLastRowTile;
         private bool newLine;
         private int columnIterator;
         private int rowIterator;
+        private Rockford rockfordPos;
 
-        public Tile createLevel(string levelPath)
+        public Level createLevel(string levelPath)
         {
             newLine = false;
+            columnIterator = 0;
+            rowIterator = 0;
+            firstTile = null;
+            lastCreatedTile = null;
+            firstOfLastRowTile = null;
+            rockfordPos = null;
+
             foreach(var line in System.IO.File.ReadAllLines("levels\\"+levelPath))
             {
                 foreach(char c in line)
@@ -58,7 +65,10 @@ namespace BoulderDash.Controller
                 }
                 newLine = true;
             }
-            return firstTile;
+            Level returnLevel = new Level();
+            returnLevel.Tile = firstTile;
+            returnLevel.rockfordPos = rockfordPos;
+            return returnLevel;
         }
 
         private Tile tileEntityFactory(EntityTypesEnum type)
@@ -88,7 +98,9 @@ namespace BoulderDash.Controller
                     newTileEntity = new Tile(new Diamond());
                     break;
                 case EntityTypesEnum.Rockford:
-                    newTileEntity = new Tile(new Rockford());
+                    Rockford rf = new Rockford();
+                    newTileEntity = new Tile(rf);
+                    rockfordPos = rf;
                     break;
                 case EntityTypesEnum.Firefly:
                     newTileEntity = new Tile(new FireFly());

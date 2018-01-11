@@ -5,10 +5,9 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public abstract class Entity
+    public class Level
     {
-        internal Tile tile;
-
-        //internal abstract Tile moveTo(Tile newTile);
+        public Tile Tile { get; set; }
+        public Rockford rockfordPos { get; set; }
     }
 }

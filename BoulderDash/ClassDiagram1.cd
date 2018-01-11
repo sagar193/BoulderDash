@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BoulderDash.Game">
-    <Position X="3.5" Y="4.25" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAAAAAAIAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAQAAAAAAAABAAgAIAgAAAAAAEAAAAAAIAAAAAAQAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="TileEntity" />
+      <Field Name="levels" />
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Tile">
@@ -31,33 +31,33 @@
   </Class>
   <Class Name="BoulderDash.GameController">
     <Position X="4.25" Y="2" Width="1.5" />
-    <AssociationLine Name="OutputCMD" Type="BoulderDash.OutputCMD">
+    <AssociationLine Name="outputCMD" Type="BoulderDash.OutputCMD">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.102" Y="-1.088" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAQAAAAAAAAAAAAAAkBAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAIAABAAAAAAAAAAAAAAAAkBAAAIABAAEAAAAAA=</HashCode>
       <FileName>Controller\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="Game" />
-      <Field Name="InputCMD" />
-      <Field Name="OutputCMD" />
-      <Field Name="MapLoaderController" />
+      <Field Name="game" />
+      <Field Name="inputCMD" />
+      <Field Name="outputCMD" />
+      <Field Name="mapLoaderController" />
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.InputCMD">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Position X="1.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>View\InputCMD.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.OutputCMD">
-    <Position X="1.25" Y="2" Width="1.5" />
+    <Position X="1.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAABgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAYA=</HashCode>
+      <HashCode>AQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAYA=</HashCode>
       <FileName>View\OutputCMD.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -135,14 +135,11 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Controller.MapLoaderController">
-    <Position X="7" Y="1.25" Width="1.5" />
+    <Position X="7.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAhQAAAAgAAAAAhAAAAABBACEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAgQAAAAgAAAAAxAAAAABBACEAAAAAAAAAAA=</HashCode>
       <FileName>Controller\MapLoaderController.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="TileEntityTypesEnum" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Exit">
     <Position X="8.25" Y="10" Width="1.5" />
@@ -176,11 +173,28 @@
       <Field Name="tile" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="BoulderDash.Level">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Model\Level.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tile" />
+    </ShowAsAssociation>
+  </Class>
   <Enum Name="BoulderDash.EntityTypesEnum">
-    <Position X="10.5" Y="4" Width="1.5" />
+    <Position X="10" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAgAAAAAAAAAAAAAAAAAAAgQCIAAAgAAAQQA=</HashCode>
-      <FileName>EntityTypesEnum.cs</FileName>
+      <FileName>Enums\EntityTypesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BoulderDash.DirectionEnum">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Enums\DirectionEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

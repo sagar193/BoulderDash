@@ -5,10 +5,11 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public abstract class Entity
+    public enum DirectionEnum
     {
-        internal Tile tile;
-
-        //internal abstract Tile moveTo(Tile newTile);
+        Left,
+        Right,
+        Up,
+        Down
     }
 }

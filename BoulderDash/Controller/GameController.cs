@@ -7,33 +7,36 @@ namespace BoulderDash
 {
     public class GameController
     {
-        private Game Game;
-        private InputCMD InputCMD;
-        private OutputCMD OutputCMD;
-        private Controller.MapLoaderController MapLoaderController;
+        /// <summary> nrOfFPSConstant should be the number of frames you want</summary>
+        const int nrOfFPSConstant = 5;
+
+        private Game game;
+        private InputCMD inputCMD;
+        private OutputCMD outputCMD;
+        private Controller.MapLoaderController mapLoaderController;
         private string[] levels;
+        int fps = 1000 / nrOfFPSConstant;
 
 
         public GameController(InputCMD input, OutputCMD output)
         {
-            OutputCMD = output;
-            InputCMD = input;
-            MapLoaderController = new Controller.MapLoaderController();
-            Game = new Game();
+            outputCMD = output;
+            inputCMD = input;
+            mapLoaderController = new Controller.MapLoaderController();
 
             loadMap();
             output.showBeginScreen();
-            InputCMD.waitForInput();
-            OutputCMD.printEntireField();
-            InputCMD.waitForInput();
+            inputCMD.waitForInput();
+
+            game.start();
 
             bool running = true;
             while (running)
             {
                 if (Console.KeyAvailable)
                 {
-                    InputCMD.waitForInput();
-                    ConsoleKeyInfo key = InputCMD.input.Dequeue();
+                    inputCMD.waitForInput();
+                    ConsoleKeyInfo key = inputCMD.input.Dequeue();
                     if (key != null)
                     {
                         switch (key.Key)
@@ -42,16 +45,16 @@ namespace BoulderDash
                                 Console.WriteLine("You pressed F1!");
                                 break;
                             case ConsoleKey.UpArrow:
-                                //Game.Rockford.
+                                game.nextLevel();
                                 break;
                             default:
                                 break;
                         }
                     }
                 }
-                OutputCMD.printEntireField();
-                System.Threading.Thread.Sleep(200);
-                //Console.WriteLine(input.waitForInput().Key);
+                outputCMD.printField(game.getCurrentStartTile());
+
+                System.Threading.Thread.Sleep(fps);
             }
         }
 
@@ -60,8 +63,12 @@ namespace BoulderDash
             levels = System.IO.Directory.GetFiles("Levels", "*.txt")
                 .Select(System.IO.Path.GetFileName)
                 .ToArray();
-            Game.TileEntity = MapLoaderController.createLevel(levels[0]);
-            OutputCMD.FirstField = Game.TileEntity;
+            game = new Game(levels.Length);
+
+            foreach (var level in levels)
+            {
+                game.addLevel(mapLoaderController.createLevel(level));
+            }
         }
     }
 }

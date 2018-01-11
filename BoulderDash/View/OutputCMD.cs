@@ -7,8 +7,6 @@ namespace BoulderDash
 {
     public class OutputCMD
     {
-        public Tile FirstField { get; set; }
-
         public OutputCMD()
         {
         }
@@ -35,7 +33,7 @@ namespace BoulderDash
                 );
         }
 
-        public void printEntireField()
+        public void printField(Tile firstTile)
         {
             Console.Clear();
 
@@ -44,9 +42,9 @@ namespace BoulderDash
             bool newLine = false;
             bool lastLine = false;
 
-            findTypeAndPrint(FirstField);
-            lastPrintedField = FirstField;
-            firstOfLastLineField = FirstField;
+            findTypeAndPrint(firstTile);
+            lastPrintedField = firstTile;
+            firstOfLastLineField = firstTile;
 
             while (lastLine == false)
             {
