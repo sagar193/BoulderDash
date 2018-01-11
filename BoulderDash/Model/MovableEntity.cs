@@ -10,5 +10,7 @@ namespace BoulderDash
         public MovableEntity(out Tile newTile) : base(out newTile)
         {
         }
+
+        internal abstract void moveTo(Tile newTile);
     }
 }

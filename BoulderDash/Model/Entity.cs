@@ -15,6 +15,6 @@ namespace BoulderDash
             newTile = tile;
         }
 
-        //internal abstract Tile moveTo(Tile newTile);
+        internal abstract void react();
     }
 }

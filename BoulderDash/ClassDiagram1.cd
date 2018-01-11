@@ -64,7 +64,7 @@
   <Class Name="BoulderDash.Rockford">
     <Position X="9.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Rockford.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,14 +78,14 @@
   <Class Name="BoulderDash.Boulder">
     <Position X="9.75" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Boulder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Diamond">
     <Position X="12" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\Diamond.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -106,7 +106,7 @@
   <Class Name="BoulderDash.FireFly">
     <Position X="12" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\FireFly.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -132,7 +132,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Entity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -140,7 +140,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Level">
-    <Position X="3.5" Y="8" Width="1.5" />
+    <Position X="3" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Model\Level.cs</FileName>
@@ -152,14 +152,14 @@
   <Class Name="BoulderDash.StationaryEntity">
     <Position X="6.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\StationaryEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.MovableEntity">
     <Position X="10.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Model\MovableEntity.cs</FileName>
     </TypeIdentifier>
   </Class>

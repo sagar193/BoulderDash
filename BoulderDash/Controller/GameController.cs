@@ -50,6 +50,18 @@ namespace BoulderDash
                             case ConsoleKey.Subtract:
                                 game.previousLevel();
                                 break;
+                            case ConsoleKey.LeftArrow:
+                                game.Rockford.moveInDirection(DirectionEnum.Left);
+                                break;
+                            case ConsoleKey.RightArrow:
+                                game.Rockford.moveInDirection(DirectionEnum.Right);
+                                break;
+                            case ConsoleKey.UpArrow:
+                                game.Rockford.moveInDirection(DirectionEnum.Up);
+                                break;
+                            case ConsoleKey.DownArrow:
+                                game.Rockford.moveInDirection(DirectionEnum.Down);
+                                break;
                             default:
                                 break;
                         }
