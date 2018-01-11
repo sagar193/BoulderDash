@@ -7,6 +7,6 @@ namespace BoulderDash
 {
     public abstract class Entity
     {
-        private Tile tile;
+        internal Tile tile;
     }
 }
