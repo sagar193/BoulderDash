@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\MapLoaderController.cs" />
+    <Compile Include="MapLoader.cs" />
     <Compile Include="Enums\EntityStatesEnum.cs" />
     <Compile Include="Enums\DirectionEnum.cs" />
     <Compile Include="Model\GravitySensitiveEntity.cs" />

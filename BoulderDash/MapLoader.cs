@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoulderDash.Controller
+namespace BoulderDash
 {
-    public class MapLoaderController
+    public class MapLoader
     {
         private Tile firstTile;
         private Tile lastCreatedTile;

@@ -13,8 +13,6 @@ namespace BoulderDash
         private Game game;
         private InputCMD inputCMD;
         private OutputCMD outputCMD;
-        private Controller.MapLoaderController mapLoaderController;
-        private string[] levels;
         int fps = 1000 / nrOfFPSConstant;
 
 
@@ -22,13 +20,12 @@ namespace BoulderDash
         {
             outputCMD = output;
             inputCMD = input;
-            mapLoaderController = new Controller.MapLoaderController();
             int frameUpdated = 0;
-
-            loadMap();
+            
             output.showBeginScreen();
             inputCMD.waitForInput();
 
+            game = new Game();
             game.start();
             
             while (game.finished != true)
@@ -79,19 +76,6 @@ namespace BoulderDash
             outputCMD.clearScreen();
             outputCMD.printEndScreen(game.Player.Score);
             inputCMD.waitForInput();
-        }
-
-        private void loadMap()
-        {
-            levels = System.IO.Directory.GetFiles("Levels", "*.txt")
-                .Select(System.IO.Path.GetFileName)
-                .ToArray();
-            game = new Game(levels.Length);
-
-            foreach (var level in levels)
-            {
-                game.addLevel(mapLoaderController.createLevel(level));
-            }
         }
     }
 }

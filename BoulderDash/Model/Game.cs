@@ -12,10 +12,10 @@ namespace BoulderDash
         public Rockford Player { get; set; }
         public bool finished { get; set; }
 
-        public Game(int nrOfLevels)
+        public Game()
         {
-            levels = new Level[nrOfLevels];
             finished = false;
+            loadMap();
         }
 
         public void addLevel(Level newLevel)
@@ -103,7 +103,21 @@ namespace BoulderDash
                 nextLevel();
             }
         }
+        
+        private void loadMap()
+        {
+            string[] levelsString;
+            levelsString = System.IO.Directory.GetFiles("Levels", "*.txt")
+                .Select(System.IO.Path.GetFileName)
+                .ToArray();
+            levels = new Level[levelsString.Length];
 
+            MapLoader mapLoader = new MapLoader();
 
+            foreach (var level in levelsString)
+            {
+                addLevel(mapLoader.createLevel(level));
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BoulderDash.Game">
-    <Position X="1.25" Y="5.75" Width="1.5" />
+    <Position X="3.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAABAAgAAAgBAAEAAEAAAAACIAAAQBEAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAABAAgAAAgBAAEAAEBAAAACIAAAQBEAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -11,11 +11,11 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Tile">
-    <Position X="6" Y="4.5" Width="1.5" />
+    <Position X="8" Y="8.25" Width="1.5" />
     <AssociationLine Name="Entity" Type="BoulderDash.Entity" FixedToPoint="true">
       <Path>
-        <Point X="7.5" Y="5.669" />
-        <Point X="8.25" Y="5.669" />
+        <Point X="9.5" Y="8.919" />
+        <Point X="10.25" Y="8.919" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.068" Y="-0.253" />
@@ -30,102 +30,94 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.GameController">
-    <Position X="4.25" Y="2" Width="1.5" />
+    <Position X="3.75" Y="4" Width="1.5" />
     <AssociationLine Name="outputCMD" Type="BoulderDash.OutputCMD">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.102" Y="-1.088" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAABAAAAAAAAAAAAAAAAkBAAAIABAAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAABAAAAAAAAAAAAAAAAgAAAAIABAAAAAAAAA=</HashCode>
       <FileName>Controller\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="game" />
       <Field Name="inputCMD" />
       <Field Name="outputCMD" />
-      <Field Name="mapLoaderController" />
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.InputCMD">
-    <Position X="1.25" Y="0.5" Width="1.5" />
+    <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAEAAAIAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>View\InputCMD.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.OutputCMD">
-    <Position X="1.25" Y="3" Width="1.5" />
+    <Position X="1.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAYA=</HashCode>
+      <HashCode>AQAABAAAAhACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAYA=</HashCode>
       <FileName>View\OutputCMD.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Rockford">
-    <Position X="14.5" Y="10" Width="1.5" />
+    <Position X="15.5" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAhAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Rockford.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Mud">
-    <Position X="5.25" Y="9.75" Width="1.5" />
+    <Position X="6.25" Y="14" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Mud.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Diamond">
-    <Position X="8.75" Y="13" Width="1.5" />
+    <Position X="9.75" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Diamond.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Wall">
-    <Position X="7.5" Y="9.75" Width="1.5" />
+    <Position X="8.75" Y="13.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.SteelWall">
-    <Position X="5.25" Y="11.25" Width="1.5" />
+    <Position X="6.25" Y="15.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\SteelWall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.FireFly">
-    <Position X="12.75" Y="10" Width="1.5" />
+    <Position X="13.75" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\FireFly.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BoulderDash.Controller.MapLoaderController">
-    <Position X="7.75" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAQAAgQAAAAgAAAAAxAAAAABBACEAAAAAAAAAAA=</HashCode>
-      <FileName>Controller\MapLoaderController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="BoulderDash.Exit">
-    <Position X="7.5" Y="11.25" Width="1.5" />
+    <Position X="8.75" Y="15.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Exit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Entity">
-    <Position X="8.25" Y="5.5" Width="1.5" />
+    <Position X="10.25" Y="8.75" Width="1.5" />
     <AssociationLine Name="tile" Type="BoulderDash.Tile">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.193" Y="0.081" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQBAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQBAAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Entity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -133,9 +125,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Level">
-    <Position X="3.75" Y="7" Width="1.5" />
+    <Position X="5.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAQQAAAAAAAAAAAAAAggAQAAAAAAAAACAAAAAAAAQQA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -143,51 +135,51 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.StationaryEntity">
-    <Position X="6.25" Y="8" Width="1.5" />
+    <Position X="7.5" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\StationaryEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.MovableEntity">
-    <Position X="11.75" Y="8" Width="1.5" />
+    <Position X="12.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACBAAAEAAAAA=</HashCode>
       <FileName>Model\MovableEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Boulder">
-    <Position X="11" Y="13" Width="1.5" />
+    <Position X="12" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Boulder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.GravitySensitiveEntity">
-    <Position X="9.75" Y="10" Width="1.5" />
+    <Position X="10.75" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAACAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\GravitySensitiveEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="BoulderDash.EntityTypesEnum">
-    <Position X="10" Y="1" Width="1.5" />
+    <Position X="13.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAgAAAAAAAAAAAAAAAAAAAgQCIAAAgAAAQQA=</HashCode>
       <FileName>Enums\EntityTypesEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="BoulderDash.DirectionEnum">
-    <Position X="10" Y="3.75" Width="1.5" />
+    <Position X="11.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
       <FileName>Enums\DirectionEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="BoulderDash.EntityStatesEnum">
-    <Position X="10" Y="5.5" Width="1.5" />
+    <Position X="9.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAABAAAAAAAAAAAAAAAAAAAAAAEQAAACAAAAAAAA=</HashCode>
+      <HashCode>AAACAABAAAAAAAAAAAAAAAAAAAAAAESAAACAAAAAAAA=</HashCode>
       <FileName>Enums\EntityStatesEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
