@@ -113,10 +113,11 @@ namespace BoulderDash
             }
         }
 
-        internal void printEndScreen()
+        internal void printEndScreen(int score)
         {
-            Console.Clear();
-            Console.WriteLine("rip");
+            Console.WriteLine("Game Over");
+            Console.WriteLine("Total score: " + score);
+            Console.WriteLine("Press any key to exit the game");
         }
 
         private void printSteelWall(Tile tile)

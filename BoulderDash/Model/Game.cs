@@ -40,12 +40,12 @@ namespace BoulderDash
         public void nextLevel()
         {
             Level oldLevel = levels[curLevel];
-            curLevel++;
-            if (curLevel >= levels.Length)
+            if (curLevel >= levels.Length-1)
             {
                 finished = true;
                 return;
             }
+            curLevel++;
 
             switchLevels(levels[curLevel], oldLevel);
         }
@@ -53,12 +53,12 @@ namespace BoulderDash
         public void previousLevel()
         {
             Level oldLevel = levels[curLevel];
-            curLevel--;
-            if (curLevel < 0)
+            if (curLevel < 1)
             {
                 finished = true;
                 return;
             }
+            curLevel--;
 
             switchLevels(levels[curLevel], oldLevel);
         }

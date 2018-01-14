@@ -76,7 +76,8 @@ namespace BoulderDash
                 System.Threading.Thread.Sleep(fps);
             }
 
-            outputCMD.printEndScreen();
+            outputCMD.clearScreen();
+            outputCMD.printEndScreen(game.Player.Score);
             inputCMD.waitForInput();
         }
 
