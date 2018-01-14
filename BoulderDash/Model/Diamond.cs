@@ -5,16 +5,10 @@ using System.Text;
 
 namespace BoulderDash
 {
-    public class Diamond : MovableEntity
+    public class Diamond : GravitySensitiveEntity
     {
         public Diamond(out Tile newTile) : base(out newTile)
         {
-        }
-        
-
-        internal override void react()
-        {
-            //throw new NotImplementedException();
         }
     }
 }

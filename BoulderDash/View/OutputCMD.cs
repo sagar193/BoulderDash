@@ -105,6 +105,12 @@ namespace BoulderDash
             }
         }
 
+        internal void printEndScreen()
+        {
+            Console.Clear();
+            Console.WriteLine("rip");
+        }
+
         private void printSteelWall(Tile tile)
         {
             bool upIsSteelWall = false;

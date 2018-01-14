@@ -46,6 +46,7 @@
     <Compile Include="Controller\MapLoaderController.cs" />
     <Compile Include="EntityStatesEnum.cs" />
     <Compile Include="Enums\DirectionEnum.cs" />
+    <Compile Include="GravitySensitiveEntity.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Exit.cs" />

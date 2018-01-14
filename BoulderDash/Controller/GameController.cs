@@ -29,9 +29,8 @@ namespace BoulderDash
             inputCMD.waitForInput();
 
             game.start();
-
-            bool running = true;
-            while (running)
+            
+            while (game.finished != true)
             {
                 if (Console.KeyAvailable)
                 {
@@ -51,27 +50,30 @@ namespace BoulderDash
                                 game.previousLevel();
                                 break;
                             case ConsoleKey.LeftArrow:
-                                game.Rockford.moveInDirection(DirectionEnum.Left);
+                                game.Player.moveInDirection(DirectionEnum.Left);
                                 break;
                             case ConsoleKey.RightArrow:
-                                game.Rockford.moveInDirection(DirectionEnum.Right);
+                                game.Player.moveInDirection(DirectionEnum.Right);
                                 break;
                             case ConsoleKey.UpArrow:
-                                game.Rockford.moveInDirection(DirectionEnum.Up);
+                                game.Player.moveInDirection(DirectionEnum.Up);
                                 break;
                             case ConsoleKey.DownArrow:
-                                game.Rockford.moveInDirection(DirectionEnum.Down);
+                                game.Player.moveInDirection(DirectionEnum.Down);
                                 break;
                             default:
                                 break;
                         }
                     }
                 }
-                game.getCurrentLevel().updateAllTiles();
+                game.update();
                 outputCMD.printField(game.getCurrentStartTile());
 
                 System.Threading.Thread.Sleep(fps);
             }
+
+            outputCMD.printEndScreen();
+            inputCMD.waitForInput();
         }
 
         private void loadMap()

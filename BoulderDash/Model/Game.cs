@@ -9,12 +9,13 @@ namespace BoulderDash
     {
         Level[] levels;
         int curLevel;
-        public Rockford Rockford { get; set; }
-        public FireFly[] FireFly;
+        public Rockford Player { get; set; }
+        public bool finished { get; set; }
 
         public Game(int nrOfLevels)
         {
             levels = new Level[nrOfLevels];
+            finished = false;
         }
 
         public void addLevel(Level newLevel)
@@ -32,7 +33,7 @@ namespace BoulderDash
         public void start()
         {
             curLevel = 0;
-            Rockford = levels[curLevel].rockfordPos;
+            Player = levels[curLevel].rockfordPos;
         }
 
         public void nextLevel()
@@ -41,7 +42,7 @@ namespace BoulderDash
             curLevel++;
             if (curLevel >= levels.Length)
             {
-                curLevel = 0;
+                finished = true;
             }
 
             switchLevels(levels[curLevel], oldLevel);
@@ -53,7 +54,7 @@ namespace BoulderDash
             curLevel--;
             if (curLevel < 0)
             {
-                curLevel = levels.Length - 1;
+                finished = true;
             }
 
             switchLevels(levels[curLevel], oldLevel);
@@ -64,9 +65,9 @@ namespace BoulderDash
             Rockford currentRockford = oldLevel.rockfordPos;
             Rockford oldRockford = newLevel.rockfordPos;
 
-            Tile oldTile = Rockford.tile;
-            oldRockford.tile.Entity = Rockford;
-            Rockford.tile = oldRockford.tile;
+            Tile oldTile = Player.tile;
+            oldRockford.tile.Entity = Player;
+            Player.tile = oldRockford.tile;
 
             oldRockford.tile = oldTile;
             oldTile.Entity = oldRockford;
@@ -84,5 +85,14 @@ namespace BoulderDash
         {
             return levels[curLevel].Tile;
         }
+
+        public void update()
+        {
+            getCurrentLevel().updateAllTiles();
+            if (Player.status == EntityStatesEnum.Killed)
+                finished = true;
+        }
+
+
     }
 }

@@ -7,11 +7,9 @@ namespace BoulderDash
 {
     public class Rockford : MovableEntity
     {
-        bool alive;
-
         public Rockford(out Tile newTile) : base(out newTile)
         {
-            alive = true;
+            status = EntityStatesEnum.Alive;
         }
         
         /// <summary>
@@ -72,8 +70,7 @@ namespace BoulderDash
 
         internal void kill()
         {
-            alive = false;
-            throw new NotImplementedException();
+            status = EntityStatesEnum.Killed;
         }
     }
 }

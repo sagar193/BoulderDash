@@ -8,6 +8,7 @@ namespace BoulderDash
     public abstract class Entity
     {
         internal Tile tile;
+        internal EntityStatesEnum status;
 
         public Entity(out Tile newTile)
         {

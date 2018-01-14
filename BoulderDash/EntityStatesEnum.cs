@@ -8,6 +8,9 @@ namespace BoulderDash
     public enum EntityStatesEnum
     {
         Idle,
-        Falling
+        Falling,
+        Alive,
+        Dying,
+        Killed
     }
 }
