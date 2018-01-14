@@ -7,6 +7,9 @@ namespace BoulderDash
 {
     public abstract class MovableEntity : Entity
     {
+        protected int interval;
+        protected int lastInterval;
+
         public MovableEntity(out Tile newTile) : base(out newTile)
         {
         }

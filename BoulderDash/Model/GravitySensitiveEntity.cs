@@ -7,11 +7,11 @@ namespace BoulderDash
 {
     public abstract class GravitySensitiveEntity : MovableEntity
     {
-        int interval = 2;
-        int lastInterval = 0;
 
         public GravitySensitiveEntity(out Tile newTile) : base(out newTile)
         {
+            interval = 0;
+            lastInterval = 0;
         }
 
 
