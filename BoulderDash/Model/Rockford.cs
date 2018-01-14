@@ -7,6 +7,8 @@ namespace BoulderDash
 {
     public class Rockford : MovableEntity
     {
+        public int Score { get; set; }
+
         public Rockford(out Tile newTile) : base(out newTile)
         {
             status = EntityStatesEnum.Alive;
@@ -50,12 +52,17 @@ namespace BoulderDash
             {
                 if (possibleNewTile.Entity == null)
                     canMove = true;
-                else if (possibleNewTile.Entity.GetType() == typeof(Exit))
+                else if (possibleNewTile.getEntityType() == EntityTypesEnum.Exit)
+                    status = EntityStatesEnum.Celebrating;
+                else if (possibleNewTile.getEntityType() == EntityTypesEnum.Firefly)
+                    status = EntityStatesEnum.Killed;
+                else if (possibleNewTile.getEntityType() == EntityTypesEnum.Mud)
                     canMove = true;
-                else if (possibleNewTile.Entity.GetType() == typeof(FireFly))
+                else if (possibleNewTile.getEntityType() == EntityTypesEnum.Diamond)
+                {
                     canMove = true;
-                else if (possibleNewTile.Entity.GetType() == typeof(Mud))
-                    canMove = true;
+                    Score += 100;
+                }
                 else
                     canMove = false;
             }

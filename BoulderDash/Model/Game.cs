@@ -34,6 +34,7 @@ namespace BoulderDash
         {
             curLevel = 0;
             Player = levels[curLevel].rockfordPos;
+            getCurrentLevel().startTimer();
         }
 
         public void nextLevel()
@@ -43,6 +44,7 @@ namespace BoulderDash
             if (curLevel >= levels.Length)
             {
                 finished = true;
+                return;
             }
 
             switchLevels(levels[curLevel], oldLevel);
@@ -55,6 +57,7 @@ namespace BoulderDash
             if (curLevel < 0)
             {
                 finished = true;
+                return;
             }
 
             switchLevels(levels[curLevel], oldLevel);
@@ -62,6 +65,7 @@ namespace BoulderDash
 
         public void switchLevels(Level newLevel, Level oldLevel)
         {
+            oldLevel.stopTimer();
             Rockford currentRockford = oldLevel.rockfordPos;
             Rockford oldRockford = newLevel.rockfordPos;
 
@@ -74,6 +78,7 @@ namespace BoulderDash
 
             newLevel.rockfordPos = currentRockford;
             oldLevel.rockfordPos = oldRockford;
+            newLevel.startTimer();
         }
 
         public Level getCurrentLevel()
@@ -91,6 +96,12 @@ namespace BoulderDash
             getCurrentLevel().updateAllTiles();
             if (Player.status == EntityStatesEnum.Killed)
                 finished = true;
+            if (Player.status == EntityStatesEnum.Celebrating)
+            {
+                Player.status = EntityStatesEnum.Alive;
+                Player.Score += (int)getCurrentLevel().getTimeleft();
+                nextLevel();
+            }
         }
 
 

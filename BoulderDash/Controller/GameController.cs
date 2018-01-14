@@ -67,6 +67,8 @@ namespace BoulderDash
                     }
                 }
                 game.update();
+                outputCMD.clearScreen();
+                outputCMD.printScoreTime(game.getCurrentLevel().getTimeleft(), game.Player.Score);
                 outputCMD.printField(game.getCurrentStartTile());
 
                 System.Threading.Thread.Sleep(fps);

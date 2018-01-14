@@ -33,10 +33,13 @@ namespace BoulderDash
                 );
         }
 
+        public void printScoreTime(double time, int score)
+        {
+            Console.WriteLine("time left: " + (int)time + "              score: " + score);
+        }
+
         public void printField(Tile firstTile)
         {
-            Console.Clear();
-
             Tile lastPrintedField;
             Tile firstOfLastLineField;
             bool newLine = false;
@@ -67,6 +70,11 @@ namespace BoulderDash
 
             }
             
+        }
+
+        public void clearScreen()
+        {
+            Console.Clear();
         }
 
         private void findTypeAndPrint(Tile tile)

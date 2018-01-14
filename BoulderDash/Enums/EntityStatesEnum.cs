@@ -11,6 +11,7 @@ namespace BoulderDash
         Falling,
         Alive,
         Dying,
-        Killed
+        Killed,
+        Celebrating
     }
 }

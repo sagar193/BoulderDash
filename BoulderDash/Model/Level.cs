@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 
 namespace BoulderDash
 {
@@ -9,6 +10,39 @@ namespace BoulderDash
     {
         public Tile Tile { get; set; }
         public Rockford rockfordPos { get; set; }
+        private DateTime startTime;
+        private DateTime stopTime;
+        private Timer timer;
+        private int levelTime;
+
+        public Level()
+        {
+            timer = new Timer();
+            levelTime = 90;
+        }
+
+        public void startTimer()
+        {
+            timer.Start();
+
+            if (startTime == null)
+                startTime = DateTime.Now;
+            else
+                startTime += (DateTime.Now - stopTime);
+        }
+        public void stopTimer()
+        {
+            timer.Stop();
+            stopTime = DateTime.Now;
+        }
+        public double getTimeleft()
+        {
+            double timeElapsed = (startTime - DateTime.Now).TotalSeconds;
+            double timeLeft = levelTime + timeElapsed;
+            if (timeLeft < 0)
+                rockfordPos.kill();
+            return levelTime + timeElapsed;
+        }
 
         public void updateAllTiles()
         {

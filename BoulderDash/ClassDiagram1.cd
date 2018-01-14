@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BoulderDash.Game">
-    <Position X="3.5" Y="4.5" Width="1.5" />
+    <Position X="1.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAABAAgAIAgBAAAAAEAAAAACIAAAABAQAA=</HashCode>
+      <HashCode>AAAQAAAAAAAABAAgAAAgBAAEAAEAAAAACIAAAQBEAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -57,14 +57,14 @@
   <Class Name="BoulderDash.OutputCMD">
     <Position X="1.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAYA=</HashCode>
+      <HashCode>AQAABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAYA=</HashCode>
       <FileName>View\OutputCMD.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BoulderDash.Rockford">
     <Position X="14.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAABAAAAAAAAABCAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Rockford.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -133,7 +133,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="BoulderDash.Level">
-    <Position X="3" Y="8.25" Width="1.5" />
+    <Position X="3.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Model\Level.cs</FileName>
@@ -167,7 +167,7 @@
     <Position X="9.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAACAAAAAAAAAABAAAAAAAAA=</HashCode>
-      <FileName>GravitySensitiveEntity.cs</FileName>
+      <FileName>Model\GravitySensitiveEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="BoulderDash.EntityTypesEnum">
@@ -188,7 +188,7 @@
     <Position X="10" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAABAAAAAAAAAAAAAAAAAAAAAAEQAAACAAAAAAAA=</HashCode>
-      <FileName>EntityStatesEnum.cs</FileName>
+      <FileName>Enums\EntityStatesEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
