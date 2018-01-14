@@ -10,5 +10,10 @@ namespace BoulderDash
         public Mud(out Tile newTile) : base(out newTile)
         {
         }
+
+        internal override void react()
+        {
+            return;
+        }
     }
 }

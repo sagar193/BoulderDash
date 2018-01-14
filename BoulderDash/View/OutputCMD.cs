@@ -71,27 +71,7 @@ namespace BoulderDash
 
         private void findTypeAndPrint(Tile tile)
         {
-            EntityTypesEnum printingType;
-            if (tile.entity == null)
-                printingType = EntityTypesEnum.Tile;
-            else if (tile.entity.GetType() == typeof(SteelWall))
-                printingType = EntityTypesEnum.SteelWall;
-            else if (tile.entity.GetType() == typeof(Boulder))
-                printingType = EntityTypesEnum.Boulder;
-            else if (tile.entity.GetType() == typeof(Diamond))
-                printingType = EntityTypesEnum.Diamond;
-            else if (tile.entity.GetType() == typeof(Exit))
-                printingType = EntityTypesEnum.Exit;
-            else if (tile.entity.GetType() == typeof(FireFly))
-                printingType = EntityTypesEnum.Firefly;
-            else if (tile.entity.GetType() == typeof(Mud))
-                printingType = EntityTypesEnum.Mud;
-            else if (tile.entity.GetType() == typeof(Rockford))
-                printingType = EntityTypesEnum.Rockford;
-            else if (tile.entity.GetType() == typeof(Wall))
-                printingType = EntityTypesEnum.Wall;
-            else
-                throw new Exception();
+            EntityTypesEnum printingType = tile.getEntityType();
 
             switch (printingType)
             {
@@ -132,24 +112,24 @@ namespace BoulderDash
             bool rightIsSteelWall = false;
             bool leftIsSteelWall = false;
 
-            if(tile.Up != null && tile.Up.entity != null)
+            if(tile.Up != null)
             {
-                if (tile.Up.entity.GetType() == typeof(SteelWall))
+                if (tile.Up.getEntityType() == EntityTypesEnum.SteelWall)
                     upIsSteelWall = true;
             }
-            if (tile.Down != null && tile.Down.entity != null)
+            if (tile.Down != null)
             {
-                if (tile.Down.entity.GetType() == typeof(SteelWall))
+                if (tile.Down.getEntityType() == EntityTypesEnum.SteelWall)
                     downIsSteelWall = true;
             }
-            if (tile.Right != null && tile.Right.entity != null)
+            if (tile.Right != null)
             {
-                if (tile.Right.entity.GetType() == typeof(SteelWall))
+                if (tile.Right.getEntityType() == EntityTypesEnum.SteelWall)
                     rightIsSteelWall = true;
             }
-            if (tile.Left != null && tile.Left.entity != null)
+            if (tile.Left != null)
             {
-                if (tile.Left.entity.GetType() == typeof(SteelWall))
+                if (tile.Left.getEntityType() == EntityTypesEnum.SteelWall)
                     leftIsSteelWall = true;
             }
 

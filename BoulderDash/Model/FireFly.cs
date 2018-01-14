@@ -11,14 +11,9 @@ namespace BoulderDash
         {
         }
 
-        internal override void moveTo(Tile newTile)
-        {
-            throw new NotImplementedException();
-        }
-
         internal override void react()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

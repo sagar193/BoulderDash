@@ -10,15 +10,11 @@ namespace BoulderDash
         public Diamond(out Tile newTile) : base(out newTile)
         {
         }
-
-        internal override void moveTo(Tile newTile)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         internal override void react()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

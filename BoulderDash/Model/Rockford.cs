@@ -7,44 +7,22 @@ namespace BoulderDash
 {
     public class Rockford : MovableEntity
     {
+        bool alive;
+
         public Rockford(out Tile newTile) : base(out newTile)
         {
+            alive = true;
         }
-
-        internal override void moveTo(Tile newTile)
-        {
-            bool canMove = false;
-
-            if (newTile != null)
-            {
-                if (newTile.entity == null)
-                    canMove = true;
-                else if (newTile.entity.GetType() == typeof(Exit))
-                    canMove = true;
-                else if (newTile.entity.GetType() == typeof(FireFly))
-                    canMove = true;
-                else if (newTile.entity.GetType() == typeof(Mud))
-                    canMove = true;
-                else
-                    canMove = false;
-            }
-            else
-                return;
-
-            if (canMove)
-            {
-                Tile oldTile = tile;
-
-                oldTile.entity = null;
-                newTile.entity = this;
-                tile = newTile;
-            }
-        }
-
+        
+        /// <summary>
+        /// This function is empty at the moment because Rockfort doesn't react to anything
+        /// </summary>
         internal override void react()
         {
-            throw new NotImplementedException();
+            return;
         }
+
+        
 
         public void moveInDirection(DirectionEnum direction)
         {
@@ -68,9 +46,34 @@ namespace BoulderDash
                     break;
             }
 
-            moveTo(possibleNewTile);
+            bool canMove = false;
 
-            
+            if (possibleNewTile != null)
+            {
+                if (possibleNewTile.Entity == null)
+                    canMove = true;
+                else if (possibleNewTile.Entity.GetType() == typeof(Exit))
+                    canMove = true;
+                else if (possibleNewTile.Entity.GetType() == typeof(FireFly))
+                    canMove = true;
+                else if (possibleNewTile.Entity.GetType() == typeof(Mud))
+                    canMove = true;
+                else
+                    canMove = false;
+            }
+            else
+                return;
+
+            if (canMove)
+            {
+                moveTo(possibleNewTile);
+            }
+        }
+
+        internal void kill()
+        {
+            alive = false;
+            throw new NotImplementedException();
         }
     }
 }

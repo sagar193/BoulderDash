@@ -11,6 +11,13 @@ namespace BoulderDash
         {
         }
 
-        internal abstract void moveTo(Tile newTile);
+        internal void moveTo(Tile newTile)
+        {
+            Tile oldTile = tile;
+
+            oldTile.Entity = null;
+            newTile.Entity = this;
+            tile = newTile;
+        }
     }
 }

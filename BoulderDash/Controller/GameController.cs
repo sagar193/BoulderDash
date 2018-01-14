@@ -67,6 +67,7 @@ namespace BoulderDash
                         }
                     }
                 }
+                game.getCurrentLevel().updateAllTiles();
                 outputCMD.printField(game.getCurrentStartTile());
 
                 System.Threading.Thread.Sleep(fps);

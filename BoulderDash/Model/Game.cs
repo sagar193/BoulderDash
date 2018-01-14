@@ -65,14 +65,19 @@ namespace BoulderDash
             Rockford oldRockford = newLevel.rockfordPos;
 
             Tile oldTile = Rockford.tile;
-            oldRockford.tile.entity = Rockford;
+            oldRockford.tile.Entity = Rockford;
             Rockford.tile = oldRockford.tile;
 
             oldRockford.tile = oldTile;
-            oldTile.entity = oldRockford;
+            oldTile.Entity = oldRockford;
 
             newLevel.rockfordPos = currentRockford;
             oldLevel.rockfordPos = oldRockford;
+        }
+
+        public Level getCurrentLevel()
+        {
+            return levels[curLevel];
         }
 
         public Tile getCurrentStartTile()
