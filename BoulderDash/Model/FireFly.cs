@@ -153,17 +153,5 @@ namespace BoulderDash
             }
 
         }
-        
-        void moveOrKill(Tile tile)
-        {
-            if (tile.getEntityType() == EntityTypesEnum.Tile)
-            {
-                moveTo(tile);
-            } else if (tile.getEntityType() == EntityTypesEnum.Rockford)
-            {
-                Rockford rf = tile.Entity as Rockford;
-                rf.kill();
-            }
-        }
     }
 }

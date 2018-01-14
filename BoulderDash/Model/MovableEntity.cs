@@ -22,5 +22,31 @@ namespace BoulderDash
             newTile.Entity = this;
             tile = newTile;
         }
+
+        
+        internal bool moveOrKill(Tile tile)
+        {
+            if (tile.getEntityType() == EntityTypesEnum.Tile)
+            {
+                moveTo(tile);
+                return true;
+            }
+            else if (tile.getEntityType() == EntityTypesEnum.Rockford)
+            {
+                Rockford rf = tile.Entity as Rockford;
+                rf.kill();
+                return true;
+            }
+            else if (tile.getEntityType() == EntityTypesEnum.Firefly)
+            {
+                moveTo(tile);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

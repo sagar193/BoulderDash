@@ -53,10 +53,11 @@ namespace BoulderDash
         {
             Entity oldEntity = Entity;
 
-            oldEntity.tile = null;
+            if (oldEntity != null)
+                oldEntity.tile = null;
             newEntity.tile = this;
-
             Entity = newEntity;
+
             return oldEntity;
         }
     }

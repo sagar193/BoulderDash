@@ -62,6 +62,33 @@ namespace BoulderDash
                 {
                     canMove = true;
                     Score += 100;
+                } else if (possibleNewTile.getEntityType() == EntityTypesEnum.Boulder)
+                {
+                    Tile targetTile = null;
+                    switch (direction)
+                    {
+                        case DirectionEnum.Left:
+                            targetTile = possibleNewTile.Left;
+                            break;
+                        case DirectionEnum.Right:
+                            targetTile = possibleNewTile.Right;
+                            break;
+                        case DirectionEnum.Up:
+                            targetTile = possibleNewTile.Up;
+                            break;
+                        case DirectionEnum.Down:
+                            targetTile = possibleNewTile.Down;
+                            break;
+                    }
+                    if (targetTile != null)
+                    {
+                        if (targetTile.getEntityType() == EntityTypesEnum.Tile)
+                        {
+                            targetTile.putOnTile(possibleNewTile.Entity);
+                            possibleNewTile.Entity = null;
+                            canMove = true;
+                        }
+                    }
                 }
                 else
                     canMove = false;
