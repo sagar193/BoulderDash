@@ -35,8 +35,8 @@ namespace BoulderDash
             {
                 if (Console.KeyAvailable)
                 {
-                    inputCMD.waitForInput();
-                    ConsoleKeyInfo key = inputCMD.input.Dequeue();
+                    inputCMD.queueInput();
+                    ConsoleKeyInfo key = inputCMD.getInputFromQueue();
                     if (key != null)
                     {
                         switch (key.Key)
