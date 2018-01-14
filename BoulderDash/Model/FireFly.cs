@@ -10,14 +10,18 @@ namespace BoulderDash
         DirectionEnum lastMovedDirection;
         public FireFly(out Tile newTile) : base(out newTile)
         {
-            interval = 1;
+            interval = 0;
             lastInterval = 0;
             lastMovedDirection = DirectionEnum.Up;
         }
 
-        internal override void react()
+        internal override void react(int updateFrame)
         {
-        if (lastInterval == interval)
+            if (lastFrameUpdated == updateFrame)
+                return;
+            else
+                lastFrameUpdated = updateFrame;
+            if (lastInterval == interval)
             {
                 lastInterval = 0;
                 #region lastMovedLeft is left (down left up)

@@ -23,6 +23,7 @@ namespace BoulderDash
             outputCMD = output;
             inputCMD = input;
             mapLoaderController = new Controller.MapLoaderController();
+            int frameUpdated = 0;
 
             loadMap();
             output.showBeginScreen();
@@ -66,7 +67,8 @@ namespace BoulderDash
                         }
                     }
                 }
-                game.update();
+                game.update(frameUpdated);
+                frameUpdated++;
                 outputCMD.clearScreen();
                 outputCMD.printScoreTime(game.getCurrentLevel().getTimeleft(), game.Player.Score);
                 outputCMD.printField(game.getCurrentStartTile());

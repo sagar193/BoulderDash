@@ -91,9 +91,9 @@ namespace BoulderDash
             return levels[curLevel].Tile;
         }
 
-        public void update()
+        public void update(int frameUpdate)
         {
-            getCurrentLevel().updateAllTiles();
+            getCurrentLevel().updateAllTiles(frameUpdate);
             if (Player.status == EntityStatesEnum.Killed)
                 finished = true;
             if (Player.status == EntityStatesEnum.Celebrating)

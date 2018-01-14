@@ -9,6 +9,7 @@ namespace BoulderDash
     {
         internal Tile tile;
         internal EntityStatesEnum status;
+        internal int lastFrameUpdated;
 
         public Entity(out Tile newTile)
         {
@@ -16,6 +17,6 @@ namespace BoulderDash
             newTile = tile;
         }
 
-        internal abstract void react();
+        internal abstract void react(int updateFrame);
     }
 }

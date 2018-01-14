@@ -10,13 +10,19 @@ namespace BoulderDash
 
         public GravitySensitiveEntity(out Tile newTile) : base(out newTile)
         {
-            interval = 0;
+            interval = 1;
             lastInterval = 0;
+            status = EntityStatesEnum.Idle;
         }
 
 
-        internal override void react()
+        internal override void react(int updateFrame)
         {
+            if (lastFrameUpdated == updateFrame)
+                return;
+            else
+                lastFrameUpdated = updateFrame;
+
             if (lastInterval == interval)
             {
                 if (status == EntityStatesEnum.Idle)

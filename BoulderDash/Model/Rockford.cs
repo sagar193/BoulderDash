@@ -17,7 +17,7 @@ namespace BoulderDash
         /// <summary>
         /// This function is empty at the moment because Rockfort doesn't react to anything
         /// </summary>
-        internal override void react()
+        internal override void react(int updateFrame)
         {
             return;
         }

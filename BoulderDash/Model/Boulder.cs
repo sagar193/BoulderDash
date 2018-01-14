@@ -9,7 +9,6 @@ namespace BoulderDash
     {
         public Boulder(out Tile newTile) : base(out newTile)
         {
-            status = EntityStatesEnum.Idle;
         }
 
 

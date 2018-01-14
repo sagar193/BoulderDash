@@ -44,17 +44,17 @@ namespace BoulderDash
             return levelTime + timeElapsed;
         }
 
-        public void updateAllTiles()
+        public void updateAllTiles(int frameUpdate)
         {
             Tile beginUpdateTile = Tile;
             Tile firstTileInRow = Tile;
 
-            Tile.Entity.react();
+            Tile.Entity.react(frameUpdate);
 
             while (firstTileInRow.Down != null)
             {
                 if (beginUpdateTile.Right.Entity != null)
-                    beginUpdateTile.Right.Entity.react();
+                    beginUpdateTile.Right.Entity.react(frameUpdate);
                 beginUpdateTile = beginUpdateTile.Right;
                 
                 if(beginUpdateTile.Right == null)
@@ -63,7 +63,7 @@ namespace BoulderDash
                     {
                         firstTileInRow = firstTileInRow.Down;
                         beginUpdateTile = firstTileInRow;
-                        firstTileInRow.Entity.react();
+                        firstTileInRow.Entity.react(frameUpdate);
                     }
                 }
             }

@@ -10,10 +10,5 @@ namespace BoulderDash
         public Wall(out Tile newTile) : base(out newTile)
         {
         }
-
-        internal override void react()
-        {
-            return;
-        }
     }
 }
