@@ -1,5 +1,4 @@
 # BoulderDash
-Modelleren 3
 Boulderdash made for avans Modeleren 3
 
 # Warning!
