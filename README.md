@@ -2,7 +2,7 @@
 Boulderdash made for avans Modeleren 3
 
 ## Warning!
-You can use my code as help 
+You can use my code as help.<br/>
 ~~There is however one important detail, polymorphism wasn't used properly.
 Instead of checking what is on tiles you should blindly call the move method regardless if there is something there or not.
 The method in the other class should say tell if the player was able to move successfully or do some other logic.~~
